@@ -18,11 +18,11 @@ public class HelloServlet extends HttpServlet
 		throws ServletException,
 			IOException
 	{
-		System.out.println("Hello World!!");
-		System.out.println("request: " + request);
-		System.out.println("response: " + response);
-
 		String username = request.getParameter("username");
-		System.out.println("username: " + username);
+
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("utf-8");
+		response.getWriter().write("hello " + username);
+
 	}
 }
